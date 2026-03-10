@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal factorial string_binary_to_decimal binary_operations
+all: ascii_to_decimal factorial string_binary_to_decimal binary_operations singleton_linked_list
 
 ascii_to_decimal:
 				mkdir -p build
@@ -19,6 +19,10 @@ string_binary_to_decimal:
 binary_operations:
 				mkdir -p build
 				$(CC) $(CFLAGS) samples/binary_operations/src.c -o build/binary_operations
+
+singleton_linked_list:
+				mkdir -p build
+				$(CC) $(CFLAGS) samples/singleton_linked_list/src.c -o build/singleton_linked_list
 
 clean:
 	rm -rf build
