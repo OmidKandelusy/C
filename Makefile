@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal factorial string_binary_to_decimal
+all: ascii_to_decimal factorial string_binary_to_decimal binary_operations
 
 ascii_to_decimal:
 				mkdir -p build
@@ -15,6 +15,10 @@ factorial:
 string_binary_to_decimal:
 				mkdir -p build
 				$(CC) $(CFLAGS) samples/string_binary_to_decimal/src.c -o build/string_binary_to_decimal
+
+binary_operations:
+				mkdir -p build
+				$(CC) $(CFLAGS) samples/binary_operations/src.c -o build/binary_operations
 
 clean:
 	rm -rf build
