@@ -22,7 +22,6 @@ int main (void){
 
     /* finding the length of the binary code word */
     int input_len = strlen(code_word);
-    int code_length = (strlen(code_word) - 2) ;
 
     /* input check */
     uint8_t qoute_counter = 0;
