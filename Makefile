@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal factorial string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list
+all: ascii_to_decimal factorial string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree
 
 ascii_to_decimal:
 				mkdir -p build
@@ -31,6 +31,10 @@ simple_hashtable_search:
 doubly_linked_list:
 				mkdir -p build
 				$(CC) $(CFLAGS) samples/doubly_linked_list/src.c -o build/doubly_linked_list
+
+binary_search_tree:
+				mkdir -p build
+				$(CC) $(CFLAGS) samples/binary_search_tree/src.c -o build/binary_search_tree
 
 clean:
 	rm -rf build
