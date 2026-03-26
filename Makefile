@@ -2,14 +2,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal factorial string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
+all: ascii_to_decimal basic_math string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
 
 
 # this section belongs to fundamental_examples directory content
 
-factorial:
+basic_math:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/factorial/src.c -o build/factorial
+				$(CC) $(CFLAGS) fundamental_examples/basic_math/src.c -o build/basic_math
 
 binary_operations:
 				mkdir -p build
