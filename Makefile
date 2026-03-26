@@ -4,17 +4,12 @@ OUT = output
 
 all: ascii_to_decimal factorial string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
 
-ascii_to_decimal:
-				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/ascii_to_decimal/src.c -o build/ascii_to_decimal
+
+# this section belongs to fundamental_examples directory content
 
 factorial:
 				mkdir -p build
 				$(CC) $(CFLAGS) fundamental_examples/factorial/src.c -o build/factorial
-
-string_binary_to_decimal:
-				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/string_binary_to_decimal/src.c -o build/string_binary_to_decimal
 
 binary_operations:
 				mkdir -p build
@@ -39,6 +34,16 @@ binary_search_tree:
 graph_traversal:
 				mkdir -p build
 				$(CC) $(CFLAGS) fundamental_examples/graph_traversal/src.c -o build/graph_traversal
+
+# this section belongs to challenge_problems directory content
+
+string_binary_to_decimal:
+				mkdir -p build
+				$(CC) $(CFLAGS) challenge_problems/string_binary_to_decimal/src.c -o build/string_binary_to_decimal
+
+ascii_to_decimal:
+				mkdir -p build
+				$(CC) $(CFLAGS) challenge_problems/ascii_to_decimal/src.c -o build/ascii_to_decimal
 
 clean:
 	rm -rf build
