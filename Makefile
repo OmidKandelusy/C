@@ -2,48 +2,48 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal basic_math string_binary_to_decimal binary_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
+all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
 
 
-# this section belongs to fundamental_examples directory content
+# this section belongs to essentials directory content
 
 basic_math:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/basic_math/src.c -o build/basic_math
+				$(CC) $(CFLAGS) essentials/basic_math/src.c -o build/basic_math
 
-binary_operations:
+bitwise_operations:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/binary_operations/src.c -o build/binary_operations
+				$(CC) $(CFLAGS) essentials/bitwise_operations/src.c -o build/bitwise_operations
 
 singleton_linked_list:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/singleton_linked_list/src.c -o build/singleton_linked_list
+				$(CC) $(CFLAGS) essentials/singleton_linked_list/src.c -o build/singleton_linked_list
 
 simple_hashtable_search:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/simple_hashtable_search/src.c -o build/simple_hashtable_search
+				$(CC) $(CFLAGS) essentials/simple_hashtable_search/src.c -o build/simple_hashtable_search
 
 doubly_linked_list:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/doubly_linked_list/src.c -o build/doubly_linked_list
+				$(CC) $(CFLAGS) essentials/doubly_linked_list/src.c -o build/doubly_linked_list
 
 binary_search_tree:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/binary_search_tree/src.c -o build/binary_search_tree
+				$(CC) $(CFLAGS) essentials/binary_search_tree/src.c -o build/binary_search_tree
 
 graph_traversal:
 				mkdir -p build
-				$(CC) $(CFLAGS) fundamental_examples/graph_traversal/src.c -o build/graph_traversal
+				$(CC) $(CFLAGS) essentials/graph_traversal/src.c -o build/graph_traversal
 
-# this section belongs to challenge_problems directory content
+# this section belongs to problems directory content
 
 string_binary_to_decimal:
 				mkdir -p build
-				$(CC) $(CFLAGS) challenge_problems/string_binary_to_decimal/src.c -o build/string_binary_to_decimal
+				$(CC) $(CFLAGS) problems/string_binary_to_decimal/src.c -o build/string_binary_to_decimal
 
 ascii_to_decimal:
 				mkdir -p build
-				$(CC) $(CFLAGS) challenge_problems/ascii_to_decimal/src.c -o build/ascii_to_decimal
+				$(CC) $(CFLAGS) problems/ascii_to_decimal/src.c -o build/ascii_to_decimal
 
 clean:
 	rm -rf build
