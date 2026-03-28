@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal
+all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal union_based_register
 
 
 # this section belongs to essentials directory content
@@ -34,6 +34,10 @@ binary_search_tree:
 graph_traversal:
 				mkdir -p build
 				$(CC) $(CFLAGS) essentials/graph_traversal/src.c -o build/graph_traversal
+
+union_based_register:
+				mkdir -p build
+				$(CC) $(CFLAGS) essentials/union_based_register/src.c -o build/union_based_register
 
 # this section belongs to problems directory content
 
