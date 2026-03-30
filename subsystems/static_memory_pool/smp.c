@@ -12,6 +12,7 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t* buffer){
 
     for (int i=0; i<s_count; i++){
         buffer[i].flags = SLOT_EMPTY;
+        buffer[i].data_len = 0;
         buffer[i].data = &pool_name[i*(s_size + sizeof(slot_t))];
         buffer[i].next = (i < s_count - 1) ? &buffer[i+1] : NULL;
     }
@@ -37,6 +38,7 @@ int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity){
 
     memcpy(current->data, data, len);
     current->flags = SLOT_FILLED;
+    current->data_len = len;
 
     return ret;
     

@@ -25,7 +25,6 @@ int main(void){
     if (ret == SMP_BUFFER_FULL){
         printf("buffer is full\n\r");
     }
-    
 
     return 0;
 }

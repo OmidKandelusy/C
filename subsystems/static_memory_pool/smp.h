@@ -24,6 +24,7 @@
 typedef struct slot_s{
     uint8_t flags;
     uint8_t *data;
+    int data_len;
 
     struct slot_s *next;
 } slot_t;
