@@ -51,6 +51,7 @@ static slot_t pool_name##_buffer[slot_count] = {0};\
 #define SMP_NULL_POINTER -1
 #define SMP_TOO_LARGE_INPUT -2
 #define SMP_BUFFER_FULL -3
+#define SMP_BUFFER_EMPTY -4
 
 // ==========================================================================
 // publicly exposed APIs
@@ -79,3 +80,16 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t *buffer);
  * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
 */
 int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity);
+
+
+
+/**
+ * @brief pop function to get data from the buffer
+ *
+ * @param [in] buffer the buffer on static pool, must be passed via SMP_BUFFER()
+ * @param [out] data output pointer to write the popped slot
+ * @param [in] len size of the popped data
+ *
+ * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
+*/
+int buffer_pop(slot_t *buffer, uint8_t *data, int *len);

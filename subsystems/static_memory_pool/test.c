@@ -26,5 +26,22 @@ int main(void){
         printf("buffer is full\n\r");
     }
 
+    ret = 0;
+    uint8_t data_slot[SMP_SLOT_SIZE(my_pool)];
+    int length = 0;
+    counter = 0;
+    while (ret == 0){
+        counter++;
+        ret = buffer_pop(SMP_BUFFER(my_pool), &data_slot[0], &length);
+        if (ret == 0){
+            printf("slot poped, counter:%d, data[0]:%d, len:%d\n\r", counter, data_slot[0], length);
+        }
+        if (ret < 0 ){
+            printf("Buffer is empty \n\r");
+            return ret;
+        }
+    }
+
+
     return 0;
 }

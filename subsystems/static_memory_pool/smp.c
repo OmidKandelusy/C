@@ -43,3 +43,23 @@ int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity){
     return ret;
     
 }
+
+int buffer_pop(slot_t *buffer, uint8_t *data, int *len){
+    int ret = SMP_SUCCESS;
+    if (!buffer || !data){
+        return SMP_NULL_POINTER;
+    }
+
+    slot_t *current = &buffer[0];
+    while (current->next != NULL && current->flags != SLOT_FILLED ){
+        current = current->next;
+    }
+    if (!current) return SMP_NULL_POINTER;
+    if (current->flags == SLOT_EMPTY) return SMP_BUFFER_EMPTY;
+
+    memcpy(data, current->data, current->data_len);
+    *len = current->data_len;
+    current->flags = SLOT_EMPTY;
+
+    return ret;
+}
