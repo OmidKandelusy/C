@@ -27,7 +27,7 @@ int main(void){
     }
 
     ret = 0;
-    uint8_t data_slot[SMP_SLOT_SIZE(my_pool)];
+    uint8_t data_slot[MAX_SLOT_COUNT];
     int length = 0;
     counter = 0;
     while (ret == 0){

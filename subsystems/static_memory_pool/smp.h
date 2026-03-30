@@ -21,6 +21,7 @@
 #define SLOT_EMPTY 0
 #define SLOT_FILLED 1
 
+/** buffer slot type */
 typedef struct slot_s{
     uint8_t flags;
     uint8_t *data;
@@ -33,6 +34,9 @@ typedef struct slot_s{
 /** this module is for 32-bit int, two int variables takes 8 bytes */
 #define POOL_CFG_LEN 8
 
+/** maximum limits of the slot configuration for size and count */
+#define MAX_SLOT_COUNT 32
+#define MAX_SLOT_SIZE 64
 
 /** main macro builder */
 #define SMP_DEFINE(pool_name, slot_count, slot_size) \
@@ -49,9 +53,11 @@ static slot_t pool_name##_buffer[slot_count] = {0};\
 /** library dedicated error codes */
 #define SMP_SUCCESS 0
 #define SMP_NULL_POINTER -1
-#define SMP_TOO_LARGE_INPUT -2
-#define SMP_BUFFER_FULL -3
-#define SMP_BUFFER_EMPTY -4
+#define SMP_SLOT_COUNT_TOO_BIG -2
+#define SMP_SLOT_SIZE_TOO_BIG -3
+#define SMP_TOO_LARGE_INPUT -4
+#define SMP_BUFFER_FULL -5
+#define SMP_BUFFER_EMPTY -6
 
 // ==========================================================================
 // publicly exposed APIs

@@ -10,6 +10,10 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t* buffer){
     int ret = SMP_SUCCESS;
     if (!pool_name) return SMP_NULL_POINTER;
 
+    if (s_size > MAX_SLOT_SIZE) return SMP_SLOT_SIZE_TOO_BIG;
+    if (s_count > MAX_SLOT_COUNT) return SMP_SLOT_COUNT_TOO_BIG;
+
+
     for (int i=0; i<s_count; i++){
         buffer[i].flags = SLOT_EMPTY;
         buffer[i].data_len = 0;
