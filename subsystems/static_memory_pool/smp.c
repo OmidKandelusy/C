@@ -1,8 +1,20 @@
-int buffer_init(uint8_t *pool_name, int s_size, int s_count){
+/** standard C header files */
+#include <stdint.h>
+#include <stdio.h>
+
+/** static memory pool library header */
+#include "smp.h"
+
+
+int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t* buffer){
     int ret = SMP_SUCCESS;
     if (!pool_name) return SMP_NULL_POINTER;
 
-    printf("slot size: %d, slot count:%d \n\r", s_size, s_count);
+    for (int i=0; i<s_count; i++){
+        buffer[i].flags = 0;
+        buffer[i].data = &pool_name[i*(s_size + sizeof(slot_t))];
+        buffer[i].next = (i < s_count - 1) ? &buffer[i+1] : NULL;
+    }
 
     return ret;
 }
