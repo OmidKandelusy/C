@@ -13,6 +13,18 @@ int main(void){
     if (ret){
         printf("[Error], reason:%d \n\r", ret);
     }
+
+    uint8_t counter = 0;
+    while (ret == 0){
+        counter ++;
+        ret = buffer_push(SMP_BUFFER(my_pool), &counter, sizeof(counter), SMP_SLOT_SIZE(my_pool));
+        if (ret == 0){
+            printf("slot #%d got filled \n\r", counter-1);
+        }
+    }
+    if (ret == SMP_BUFFER_FULL){
+        printf("buffer is full\n\r");
+    }
     
 
     return 0;
