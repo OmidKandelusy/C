@@ -11,7 +11,7 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t* buffer){
     if (!pool_name) return SMP_NULL_POINTER;
 
     for (int i=0; i<s_count; i++){
-        buffer[i].flags = 0;
+        buffer[i].flags = SLOT_EMPTY;
         buffer[i].data = &pool_name[i*(s_size + sizeof(slot_t))];
         buffer[i].next = (i < s_count - 1) ? &buffer[i+1] : NULL;
     }

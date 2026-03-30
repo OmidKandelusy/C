@@ -17,6 +17,9 @@
 // =========================================================================
 // typedefintions and macros:
 
+/** slot flags enum type */
+#define SLOT_EMPTY 0
+#define SLOT_FILLED 1
 
 typedef struct slot_s{
     uint8_t flags;
