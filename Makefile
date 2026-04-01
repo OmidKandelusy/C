@@ -2,7 +2,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2
 OUT = output
 
-all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree graph_traversal union_based_register static_memory_pool
+all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations \
+     singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree \
+	 graph_traversal union_based_register static_memory_pool opcode_registry
 
 
 # this section belongs to essentials directory content
@@ -51,10 +53,15 @@ ascii_to_decimal:
 
 # this section belongs to stubsystem directory content
 
-SRCS := $(wildcard subsystems/static_memory_pool/*.c)
+SMP_SRCS := $(wildcard subsystems/static_memory_pool/*.c)
 static_memory_pool:
 				mkdir -p build
-				$(CC) $(CFLAGS) $(SRCS) -o build/static_memory_pool
+				$(CC) $(CFLAGS) $(SMP_SRCS) -o build/static_memory_pool
+
+OCR_SRCS := $(wildcard subsystems/opcode_registry/*.c)
+opcode_registry:
+				mkdir -p build
+				$(CC) $(CFLAGS) $(OCR_SRCS) -o build/opcode_registry
 
 
 clean:
