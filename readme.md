@@ -23,3 +23,6 @@ This would open up a interactive terminal to select a specific example to run:
 `./build/factorial`
 
 In order to stop the container that is being run, type in `exit` in the terminal
+
+## Formatting Files
+There is a `setup.sh` bash script in the root path of the repository that currently inlcudes a few lines enabling formatting the entire repository's files with clang-format. Note: before using the bash, make sure taht the clang-format is installed on your machine, and do not forget to make the file executable via the following command: `chmod +x setup.sh`. 
