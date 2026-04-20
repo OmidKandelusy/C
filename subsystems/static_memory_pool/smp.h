@@ -38,15 +38,14 @@ typedef struct slot_s {
 #define MAX_SLOT_SIZE 64
 
 /** main macro builder */
-#define SMP_DEFINE(pool_name, slot_count, slot_size)                           \
+#define SMP_DEFINE(pool_name, buffer_name, slot_count, slot_size)                           \
   static uint8_t pool_name[(slot_count) * (slot_size + sizeof(slot_t))];       \
   static const int pool_name##_slot_count = slot_count;                        \
   static const int pool_name##_slot_size = slot_size;                          \
-  static slot_t pool_name##_buffer[slot_count] = {0};
+  static slot_t buffer_name[slot_count] = {0};
 
 #define SMP_SLOT_SIZE(pool_name) pool_name##_slot_size
 #define SMP_SLOT_COUNT(pool_name) pool_name##_slot_count
-#define SMP_BUFFER(pool_name) pool_name##_buffer
 
 /** library dedicated error codes */
 #define SMP_SUCCESS 0
@@ -66,7 +65,7 @@ typedef struct slot_s {
  * @param [in] pool_name name of the pool passed to SMP_DEFINE()
  * @param [in] s_size the slot size, must be passed via SMP_SLOT_SIZE()
  * @param [in] s_count the number of slots, must be passed via SMP_SLOT_COUNT()
- * @param [in] buffer the buffer on static pool, must be passed via SMP_BUFFER()
+ * @param [in] buffer the buffer on static pool
  *
  * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
  */
@@ -75,7 +74,7 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t *buffer);
 /**
  * @brief push function to place data into the buffer
  *
- * @param [in] buffer the buffer on static pool, must be passed via SMP_BUFFER()
+ * @param [in] buffer the buffer on static pool
  * @param [in] data the data to be placed in the buffer
  * @param [in] len size of the data to be placed in the buffer
  * @param [in] capcaity slot size must be passed via SMP_SLOT_SIZE()
@@ -87,7 +86,7 @@ int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity);
 /**
  * @brief pop function to get data from the buffer
  *
- * @param [in] buffer the buffer on static pool, must be passed via SMP_BUFFER()
+ * @param [in] buffer the buffer on static pool
  * @param [out] data output pointer to write the popped slot
  * @param [in] len size of the popped data
  *

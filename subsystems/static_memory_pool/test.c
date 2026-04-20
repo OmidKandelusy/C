@@ -8,7 +8,7 @@
 // global definitions
 
 /** defnining a static memory pool hosting the buffer */
-SMP_DEFINE(my_pool, 5, 5)
+SMP_DEFINE(my_pool, my_buffer, 5, 5)
 
 int main(void) {
 
@@ -16,7 +16,7 @@ int main(void) {
   printf("\n test module started \n\r");
 
   ret = buffer_init(my_pool, SMP_SLOT_SIZE(my_pool), SMP_SLOT_COUNT(my_pool),
-                    SMP_BUFFER(my_pool));
+                    my_buffer);
   if (ret) {
     printf("[Error], reason:%d \n\r", ret);
   }
@@ -24,7 +24,7 @@ int main(void) {
   uint8_t counter = 0;
   while (ret == 0) {
     counter++;
-    ret = buffer_push(SMP_BUFFER(my_pool), &counter, sizeof(counter),
+    ret = buffer_push(my_buffer, &counter, sizeof(counter),
                       SMP_SLOT_SIZE(my_pool));
     if (ret == 0) {
       printf("slot #%d got filled \n\r", counter - 1);
@@ -40,7 +40,7 @@ int main(void) {
   counter = 0;
   while (ret == 0) {
     counter++;
-    ret = buffer_pop(SMP_BUFFER(my_pool), &data_slot[0], &length);
+    ret = buffer_pop(my_buffer, &data_slot[0], &length);
     if (ret == 0) {
       printf("slot poped, counter:%d, data[0]:%d, len:%d\n\r", counter,
              data_slot[0], length);
