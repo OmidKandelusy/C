@@ -1,14 +1,12 @@
 # Repository Description
 
-This repository contains basic examples, typical coding challenges, and subsystem illustrating
-important and powerful solutions that can be developed wiht C programing language. Currently, this is a work in progress work and stay in this status until the first reales tag would be issued to the main branch.
+This repository contains basic examples, typical coding challenges, and subsystems illustrating important and powerful solutions that can be developed via the C programing language. Specifically, the repository layout current contains three main sections as
 
-The breif description about the main directories of the reposiory, what is the goal behid them:
-1. Essentials: this folder contains the core concepts related to the C programing wherein there are user interactive eamples which the user can really see how things work. This folder clearly shows how pointers, data strucuters, and basic algorithms can be implemented in C.
+1. Essentials: this folder contains the core concepts related to the C programing. There are user-interactive eamples which illustrates the fundamentals such as pointers, data strucuters, and basic algorithms.
 
 2. Problems: this folder is intended to contain the typical coding challeng problems that are usually appear in skill evaluation in one form or the other, like leedcode, codebyte, etc.
 
-3. subsystem: the ideae behind this folder to show that how the C language program can be used to implement c modules that can be imported and used as building blocks of bigger projects. Another importatn reason is reflecting the systematic approaches like how to design the header files and publicly exposed APIs, in code documentation, etxc.
+3. subsystem: the ideae behind this folder is to create plug and play C modules that can be imported and used as building blocks of bigger projects. Further, it reflects the systematic approaches in structuing sofware development kit (SDK)s, e.g., how to design the header files, publicly exposed APIs, documentation, etc.
 
 # Usage Notes
 
@@ -22,7 +20,7 @@ This would open up a interactive terminal to select a specific example to run:
 
 `./build/factorial`
 
-In order to stop the container that is being run, type in `exit` in the terminal
+In order to stop the container that is being run, type in `exit` in the terminal.
 
 ## Formatting Files
-There is a `setup.sh` bash script in the root path of the repository that currently inlcudes a few lines enabling formatting the entire repository's files with clang-format. Note: before using the bash, make sure taht the clang-format is installed on your machine, and do not forget to make the file executable via the following command: `chmod +x setup.sh`. 
+There is a `setup.sh` bash script in the root of the repository that currently inlcudes a few lines enabling formatting the entire repository's files with clang-format. Note: before using the bash, make sure taht the clang-format is installed on your machine, and do not forget to make the file executable via the following command: `chmod +x setup.sh`. 
