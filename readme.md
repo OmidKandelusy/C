@@ -8,7 +8,11 @@ This repository contains basic examples, typical coding challenges, and subsyste
 
 3. subsystem: the ideae behind this folder is to create plug and play C modules that can be imported and used as building blocks of bigger projects. Further, it reflects the systematic approaches in structuing sofware development kit (SDK)s, e.g., how to design the header files, publicly exposed APIs, documentation, etc.
 
-# Usage Notes
+# Continueous Integration (CI)
+The CI workflow enforces checks on the commits being pushed to the main branch. The workflow steps contains a build step where all the targets listed in the repository's makefile will be build.
+
+
+## Usage Notes
 
 This repo is accompanied with a docker build environment. To run a specific sample, you need to first create the docker container image as
 
