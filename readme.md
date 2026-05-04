@@ -6,7 +6,7 @@ This repository contains basic examples, typical coding challenges, and subsyste
 
 2. Problems: this folder is intended to contain the typical coding challenge problems that are usually appear in skill evaluation in one form or the other, like leetcode, codebyte, etc.
 
-3. subsystem: the ideae behind this folder is to create plug and play C modules that can be imported and used as building blocks of bigger projects. Further, it reflects the systematic approaches in structuring software development kit (SDK)s, e.g., how to design the header files, publicly exposed APIs, documentation, etc.
+3. subsystem: the idea behind this folder is to create plug and play C modules that can be imported and used as building blocks of bigger projects. Further, it reflects the systematic approaches in structuring software development kit (SDK)s, e.g., how to design the header files, publicly exposed APIs, documentation, etc.
 
 # Continuous Integration (CI)
 The CI workflow enforces checks on the commits being pushed to the main branch. The workflow steps contains a build step where all the targets listed in the repository's makefile will be build.
@@ -14,7 +14,8 @@ The CI workflow enforces checks on the commits being pushed to the main branch. 
 
 ## Usage Notes
 
-This repo is accompanied with a docker build environment. To run a specific sample, you need to first create the docker container image as
+There are two main ways to build the projects in this repository: a) docker build b) direct build with a C compiler. However, it is recommended
+to use the docker build environment that is accompanied with this repo for guaranteed reproducing results. To run a specific sample, you need to first create the docker container image as
 
 cd `this repository path`
 `docker build -t c-samples .`
