@@ -4,7 +4,7 @@ OUT = output
 
 all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations \
      singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree \
-	 graph_traversal union_based_register static_memory_pool opcode_registry
+	 graph_traversal union_based_register smp_linkedlist_buffer opcode_registry
 
 
 # this section belongs to essentials directory content
@@ -51,12 +51,12 @@ ascii_to_decimal:
 				mkdir -p build
 				$(CC) $(CFLAGS) problems/ascii_to_decimal/src.c -o build/ascii_to_decimal
 
-# this section belongs to stubsystem directory content
+# this section belongs to subsystem directory content
 
-SMP_SRCS := $(wildcard subsystems/static_memory_pool/*.c)
-static_memory_pool:
+SMP_SRCS := $(wildcard subsystems/static_memory_pool/linkedlist_buffer/*.c)
+smp_linkedlist_buffer:
 				mkdir -p build
-				$(CC) $(CFLAGS) $(SMP_SRCS) -o build/static_memory_pool
+				$(CC) $(CFLAGS) $(SMP_SRCS) -o build/linkedlist_buffer
 
 OCR_SRCS := $(wildcard subsystems/opcode_registry/*.c)
 opcode_registry:

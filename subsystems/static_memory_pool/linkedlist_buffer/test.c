@@ -1,13 +1,13 @@
 /** standard c header file */
 #include <stdio.h>
 
-/** static memeory pool header file */
-#include "smp.h"
+/** static memory pool header file */
+#include "ll_buff.h"
 
 // ==========================================================================================
 // global definitions
 
-/** defnining a static memory pool hosting the buffer */
+/** defining a static memory pool hosting the buffer */
 SMP_DEFINE(my_pool, my_buffer, 5, 5)
 
 int main(void) {

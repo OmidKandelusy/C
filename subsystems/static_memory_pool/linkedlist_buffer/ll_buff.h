@@ -1,7 +1,7 @@
 /** This library provides a robust yet simple interface to
  *  to define and perform buffering operations via its exposed
  *  APIs. This library is a working in progress and will be updated
- *  continuesly.
+ *  continuously.
  *
  *  Author: Omid Kandelusy
  *  Date: March 2026
@@ -15,7 +15,7 @@
 #include <string.h>
 
 // =========================================================================
-// typedefintions and macros:
+// typedefinitions and macros:
 
 /** slot flags enum type */
 #define SLOT_EMPTY 0
@@ -60,14 +60,14 @@ typedef struct slot_s {
 // publicly exposed APIs
 
 /**
- * @brief intializer function for a user defined static memeory pool
+ * @brief initializer function for a user defined static memory pool
  *
  * @param [in] pool_name name of the pool passed to SMP_DEFINE()
  * @param [in] s_size the slot size, must be passed via SMP_SLOT_SIZE()
  * @param [in] s_count the number of slots, must be passed via SMP_SLOT_COUNT()
  * @param [in] buffer the buffer on static pool
  *
- * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
+ * @return SMP_SUCCESS if succeeds, otherwise it returns a negative error code
  */
 int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t *buffer);
 
@@ -79,7 +79,7 @@ int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t *buffer);
  * @param [in] len size of the data to be placed in the buffer
  * @param [in] capcaity slot size must be passed via SMP_SLOT_SIZE()
  *
- * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
+ * @return SMP_SUCCESS if succeeds, otherwise it returns a negative error code
  */
 int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity);
 
@@ -90,6 +90,6 @@ int buffer_push(slot_t *buffer, uint8_t *data, int len, int capacity);
  * @param [out] data output pointer to write the popped slot
  * @param [in] len size of the popped data
  *
- * @return SMP_SUCEES if succeeds, otherwise it returns a negative error code
+ * @return SMP_SUCCESS if succeeds, otherwise it returns a negative error code
  */
 int buffer_pop(slot_t *buffer, uint8_t *data, int *len);

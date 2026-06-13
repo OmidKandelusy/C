@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /** static memory pool library header */
-#include "smp.h"
+#include "ll_buff.h"
 
 int buffer_init(uint8_t *pool_name, int s_size, int s_count, slot_t *buffer) {
   int ret = SMP_SUCCESS;
