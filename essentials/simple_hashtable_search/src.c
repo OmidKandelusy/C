@@ -83,7 +83,7 @@ void add_an_item(void) {
         return;
       }
     }
-    // add to the next availabe bucket
+    // add to the next available bucket
     memcpy(dictionary[ret].key, user_key, strlen(user_key) + 1);
   }
 

@@ -22,7 +22,7 @@ doubly_linked_list_t linked_list;
 
 void add_item(void) {
 
-  // memeory allocation
+  // memory allocation
   node_t *new_node = malloc(sizeof(node_t));
   if (!new_node) {
     printf("[Error], memory allocation failed \n\r");
@@ -100,17 +100,17 @@ void remove_one_item(void) {
   node_t *node_before_current = current_node->prev_node;
   node_t *node_after_current = current_node->next_node;
 
-  // updating the links
-  // ToDo: break me into clean function calls and switch for the three cases
-  //       i.e., the removing the first, the middle, and the last
+  // middle node removal:
   if (user_input > 1 && user_input < count) {
     node_before_current->next_node = current_node->next_node;
     node_after_current->prev_node = current_node->prev_node;
+  // first node removal:
   } else if (user_input == 1) {
     if (node_after_current != NULL) {
       node_after_current->prev_node = current_node->prev_node;
     }
     linked_list.head = node_after_current;
+  // last node removal:
   } else if (user_input == count && count > 1) {
     node_before_current->next_node = NULL;
   }

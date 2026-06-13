@@ -6,7 +6,7 @@
 // =====================================================
 // definitions and macros
 
-/** type defintion of a 8-bit register type */
+/** type definition of a 8-bit register type */
 typedef union {
   uint8_t slot;
 
@@ -47,7 +47,7 @@ void set_flag(void) {
   int flg = 0;
 
   printf("select flag to set \n\r");
-  printf(" 0. enale \n\r");
+  printf(" 0. enable \n\r");
   printf(" 1. mode  \n\r");
   printf(" 2. error \n\r");
   printf(" 3. ready \n\r");
@@ -131,7 +131,7 @@ void set_flag(void) {
 
 void print_register(void) {
   printf("\n\r");
-  printf("falgs: \n\r");
+  printf("flags: \n\r");
   printf("    enable:%d | mode:%d | error:%d | ready:%d | unused:%d \n\r",
          test_reg.bits.enable, test_reg.bits.mode, test_reg.bits.error,
          test_reg.bits.ready, test_reg.bits.unused);

@@ -37,7 +37,7 @@ void update_slot_value(void) {
     return;
   }
 
-  printf("inser the value for the slot[%d] \n\r", user_index);
+  printf("insert the value for the slot[%d] \n\r", user_index);
   err = scanf("%d", &user_value);
   if (err != 1) {
     printf("[Error], invalid slot value \n\r");
@@ -69,7 +69,7 @@ void find_available_slot(void) {
     end--;
   }
 
-  printf("array is completey full \n\r");
+  printf("array is completely full \n\r");
 
   return;
 }

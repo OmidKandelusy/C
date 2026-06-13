@@ -16,6 +16,7 @@ int check_input_validity(int n) {
 int main(void) {
 
   printf("Type in the value for factorial, then press enter \n\r");
+  printf("  the value should be less than 12!");
 
   int n = 0;
   scanf("%d", &n);
