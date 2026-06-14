@@ -4,7 +4,7 @@ OUT = output
 
 all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations \
      singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree \
-	 graph_traversal union_based_register smp_linkedlist_buffer opcode_registry
+	 graph_traversal union_based_register smp_linkedlist_buffer opcode_registry smp_ff_buffer
 
 
 # this section belongs to essentials directory content
@@ -58,11 +58,15 @@ smp_linkedlist_buffer:
 				mkdir -p build
 				$(CC) $(CFLAGS) $(SMP_SRCS) -o build/linkedlist_buffer
 
+SMP_FF_SRCS := $(wildcard subsystems/static_memory_pool/fifo_buffer/*.c)
+smp_ff_buffer:
+			mkdir -p build
+			$(CC) $(CFLAGS) $(SMP_FF_SRCS) -o build/smp_ff_buffer
+
 OCR_SRCS := $(wildcard subsystems/opcode_registry/*.c)
 opcode_registry:
 				mkdir -p build
 				$(CC) $(CFLAGS) $(OCR_SRCS) -o build/opcode_registry
-
 
 clean:
 	rm -rf build
