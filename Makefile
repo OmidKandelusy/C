@@ -5,7 +5,7 @@ OUT = output
 all: ascii_to_decimal basic_math string_binary_to_decimal bitwise_operations \
      singleton_linked_list simple_hashtable_search doubly_linked_list binary_search_tree \
 	 graph_traversal union_based_register smp_linkedlist_buffer opcode_registry smp_ff_buffer \
-	 string_command_register
+	 string_command_register generate_subset
 
 # this section belongs to essentials directory content
 
@@ -54,6 +54,10 @@ ascii_to_decimal:
 string_command_register:
 				mkdir -p build
 				$(CC) $(CFLAGS) problems/string_command_register/source.c -o build/string_command_register
+			
+generate_subset:
+				mkdir -p build
+				$(CC) $(CFLAGS) problems/generate_subsets/source.c -o build/generate_subset
 
 # this section belongs to subsystem directory content
 
